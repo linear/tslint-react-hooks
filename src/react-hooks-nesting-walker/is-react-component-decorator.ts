@@ -1,6 +1,6 @@
 import { isReactApiExpression } from './is-react-api-expression';
 
-const reactComponentDecorators = ['forwardRef', 'memo'];
+const reactComponentDecorators = ['forwardRef', 'memo', 'observer'];
 
 /**
  * Tests is an expression is a React top-level API component decorator (e.g. `React.forwardRef`,

@@ -1,6 +1,7 @@
 // Tests for React top level APIs that wrap components
 
 import React, { memo, forwardRef } from 'react';
+import { observer } from 'mobx-react';
 
 // Hooks should be allowed inside functions passed to React.memo and React.forwardRef
 
@@ -28,6 +29,17 @@ const MemoizedComponent = memo(() => {
 });
 
 const RefForwardingComponent = forwardRef((props, ref) => {
+  useEffect(() => {
+    console.log('Forwarding refs');
+  });
+
+  return <div ref={ref}>Forwarding refs</div>;
+});
+
+
+// Mobx
+
+const RefForwardingComponent = observer((props) => {
   useEffect(() => {
     console.log('Forwarding refs');
   });
